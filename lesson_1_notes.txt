@@ -1,0 +1,18 @@
+1. diff -u comand on linux and mac allow us to compare two files
+2. Example diff - newfile oldfile
+3. - shows lines that were removed
+4. + shows lines that were added
+
+
+Git log
+1. Shows the id of the commits and the message
+2. To do a diff between any two commits, you can copy the commit id from the log and do a diff
+3. git diff id-1 id-2
+
+git log --stat
+1. Shows us a little more than just log
+2. it shows us what files changed in a commit
+3. Green +++ show the added lines and red ---- signs show the lines removed
+
+** when viewing logs the screen will end at a colon. Make sure to hit enter to see the next couple of lines
+Or down arrow to see the rest of the lines
