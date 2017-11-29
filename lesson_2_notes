@@ -1,0 +1,84 @@
+To compare changes between working directory and staging, run git different
+Without any arguments
+
+To compare changes between last commit and staging, Run
+git diff -staged
+
+To remove any changes in staging and working directory, Run
+Git reset --hard
+
+** warning, you can not undo this command since the changes were never committed
+
+To get back to the last commit, Run
+git checkout master
+
+
+BRANCHING ************************
+
+A Branch allows you to experiement with your code by creating a new branch that copies all the code from the master branch.
+
+git branch
+Shows you what branches you have.
+The one with the astrick (and usually in green), is the branch you are on
+
+git branch {name}
+Creates a new branch with "name"
+
+** NOTE (curly brackets are used to show a placeholder. You would not use them in a command)
+
+To switch to a different branch, you just do a checkout
+git checkout {name}
+
+Master Branch
+The Master branch is always the main branch. When you make a commit, it is usually automatically checked out to you.
+
+Unless you switched to a granch, in general you are on the master branch
+
+Merging
+You can merge branches by doing a merge
+
+Graph of branches
+To see a graph of committs on branches, Run
+git log --graph --oneline {branch1} {branch2}
+
+Where branch 1 and 2 are the two branches you want to compare
+--oneline condenses the output to oneline
+
+DISCONNECTED HEAD **********
+This state is caused when you make a commit on a branch while you have an outdated commit checked out
+This commit becomes unreachable unless you write down the ID.
+
+To fix a doconnected head, you can Run
+git checkout -b {new branch name}
+
+This is like creating a new branch with git branch {name}
+
+You can merge a branch by running
+git merge {branch1} {branch2}
+
+
+GIT show
+After you do a merge, all the previous commits from both branches are merged together by date.
+
+This often makes it difficult to determine what changes were made in each commit since the commit before may not have been the parent
+
+To see only the changes made in that commit, Run
+git show {commitID}
+
+GIT MERGE CONFLICTS
+When merging two branches, if their are conflicts, git puts annotations in the filename
+<<<<< HEAD
+This signifies the change in the head (whatever is checked out at the present time)
+|||||||||
+This signifies the original before the merge
+
+To find the conflics, do a search for <<<<<<<<<
+
+
+MERGE CONFLICTS
+Open the file that contains the conflict.
+
+Search for <<<<<
+Remove git annotation lines, merge changes however you see fit and save file
+
+Stage file and commit. Once you have done that the merge will be complete.
